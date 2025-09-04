@@ -1,0 +1,102 @@
+/* Todo Basics CSS - har några problem som du behöver fixa! */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    /* Väldigt liten margin? */
+    background-color: white;
+    /* Kanske lite tråkigt? */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    /* För liten padding? */
+    /* Ingen bakgrund eller skugga? Ser platt ut */
+}
+
+h1 {
+    text-align: left;
+    /* Borde kanske vara centrerad? */
+    color: black;
+    /* Lite tråkig färg? */
+    margin-bottom: 30px;
+}
+
+/* Input-sektion */
+.input-section {
+    margin-bottom: 20px;
+    /* Ingen layout-styling? Items staplas vertikalt istället för horisontellt */
+}
+
+#todo-input {
+    padding: 5px;
+    /* För liten padding? */
+    font-size: 12px;
+    /* För liten text? */
+    border: 3px solid red;
+    /* Ful röd ram? */
+    width: 200px;
+}
+
+/* Knapp-styling - har stora problem! */
+.add-button {
+    padding: 5px;
+    /* För liten padding? */
+    font-size: 12px;
+    /* För liten text? */
+    border: 3px solid purple;
+    /* Ful lila ram? */
+    background-color: yellow;
+    /* Gul bakgrund? Ser konstigt ut! */
+    color: blue;
+    /* Blå text på gul bakgrund? */
+    cursor: pointer;
+}
+
+/* TODO: Här behöver du lägga till CSS för olika knapp-typer */
+/* Exempel: .delete-button, .clear-button, etc. */
+
+/* Todo-lista */
+.todo-list {
+    border: 1px solid #ccc;
+    min-height: 200px;
+    padding: 10px;
+    margin: 20px 0;
+    /* Ingen bakgrundsfärg? */
+}
+
+/* TODO: Du behöver CSS för todo-items */
+/* .todo-item { } */
+/* .todo-item.completed { } */
+/* .todo-item button { } */
+
+/* Statistik */
+.stats {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    /* Kanske behöver bättre styling? */
+}
+
+/* Debug-område */
+.debug {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 4px solid #007acc;
+    font-size: 12px;
+    /* Kanske för liten text? */
+}
+
+.debug h3 {
+    margin-top: 0;
+    color: #007acc;
+}
+
+.debug span {
+    font-weight: bold;
+    color: #d63384;
+    font-family: monospace;
+}
