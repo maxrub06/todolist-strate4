@@ -1,7 +1,7 @@
 // JavaScript Todo Basics - Har buggar som du behöver fixa!
 
 // STEG 1: Todo-array (fungerar bra)
-let todoArray = ['Handla mat', 'Städa rummet', 'Göra läxor'];
+let todoArray = [];
 
 // STEG 2: Visa todos-funktion (har problem!)
 function visaTodos() {
@@ -17,8 +17,8 @@ function visaTodos() {
     }
 
     // PROBLEM: Vi uppdaterar aldrig HTML:en!
-    // listaElement.innerHTML = htmlString;
-}
+     listaElement.innerHTML = htmlString;
+}     
 
 // STEG 3: Lägg till todo (har flera problem!)
 function laggTillTodo() {
@@ -26,32 +26,44 @@ function laggTillTodo() {
     const nyTodo = inputElement.value;
 
     // PROBLEM: Vad händer om input är tom?
+
+if (nyTodo === '') {
+    alert("Du måste skriva något!");
+    return;
+}
+
     todoArray.push(nyTodo);
+    visaTodos();
+
+    inputElement.value = '';
 
     // PROBLEM: Listan uppdateras inte!
-    // visaTodos();
+    visaTodos();
 
     // PROBLEM: Input rensas inte!
-    // inputElement.value = '';
+    inputElement.value = '';
 
     // PROBLEM: Statistik uppdateras inte!
-    // uppdateraStats();
-    // uppdateraDebug();
+    uppdateraStats();
+    uppdateraDebug();
 }
 
 // STEG 4: Ta bort todo (saknas helt!)
-// TODO: Skriv denna funktion
-// function taBortTodo(index) {
-//     // Använd splice() för att ta bort från array
-//     // Uppdatera listan och statistik
-// }
+function taBortTodo(index) {
+    todoArray.splice(index, 1); 
+    visaTodos();              
+    uppdateraStats();           
+    uppdateraDebug();           
+}
 
 // STEG 5: Statistik-funktion (saknas!)
 // TODO: Skriv denna funktion
-// function uppdateraStats() {
+ function uppdateraStats() {
+    document.getElementById('total-count').textContent = todoArray.length;
+
 //     // Uppdatera total-count
 //     // Kanske fler statistik senare?
-// }
+ }
 
 // STEG 6: Debug-funktion (fungerar)
 function uppdateraDebug() {
@@ -62,15 +74,16 @@ function uppdateraDebug() {
 
 // STEG 7: Event listeners (bara en fungerar!)
 document.getElementById('add-btn').addEventListener('click', laggTillTodo);
+document.getElementById('remove-btn').addEventListener('click', taBortTodo);
 
 // TODO: Lägg till event listener för Enter-tangent
 // TODO: Lägg till event listeners för andra knappar
 
 // STEG 8: Initiera appen (stora problem!)
 // PROBLEM: Inget händer när sidan laddas!
-// visaTodos();
-// uppdateraStats();
-// uppdateraDebug();
+ visaTodos();
+ uppdateraStats();
+ uppdateraDebug();
 
 // TESTOMRÅDE
 console.log('Todo app laddad!');
